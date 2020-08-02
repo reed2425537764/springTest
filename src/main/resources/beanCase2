@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="accountService" class="cn.case2.service.impl.AccountServiceImpl"/>
+    <bean id="logger" class="cn.case2.utils.Logger"/>
+    <aop:config>
+        <aop:pointcut id="pt1" expression="execution(* cn.case2.service.impl.*.*(..))"/>
+        <aop:aspect id="logAdvice" ref="logger">
+            <!--<aop:pointcut id="pt1" expression="execution(* cn.case2.service.impl.*.*(..))"/>-->
+            <aop:before method="beforePrintLog" pointcut-ref="pt1"/>
+            <aop:after-returning method="afterReturingPrintLog" pointcut-ref="pt1"/>
+            <aop:after-throwing method="afterThrowingPrintLog" pointcut-ref="pt1"/>
+            <aop:after method="afterPrintLog" pointcut-ref="pt1"/>
+            <aop:around method="roundPrintLog" pointcut-ref="pt1"/>
+        </aop:aspect>
+    </aop:config>
+</beans>
