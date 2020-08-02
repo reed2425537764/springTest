@@ -11,7 +11,7 @@ import org.springframework.beans.factory.InitializingBean;
 /*
 * 方法一：实现InitializingBean, DisposableBean接口
 * 方法二：在@Bean指定方法 见Cat.java
-* 方法三：@Po
+* 方法三：@PostConstruct @PreDestroy 见Dog.java
 * */
 public class MyBean implements InitializingBean, DisposableBean {
     @Override
