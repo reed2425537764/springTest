@@ -9,3 +9,5 @@ spring learning
 20200802 新增case8 spring容器后置处理器(BeanFactoryPostProcessor)  BeanDefinitionRegistryPostProcessor  动态注入bean(2种方式)
 ###
 20200806 新增spring test      @RunWith(SpringJUnit4ClassRunner.class)   @ContextConfiguration
+###
+20200825 case9  profile      VM option = -Dfile.encoding=UTF-8 -Dspring.profiles.active=dev
