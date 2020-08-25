@@ -11,3 +11,5 @@ spring learning
 20200806 新增spring test      @RunWith(SpringJUnit4ClassRunner.class)   @ContextConfiguration
 ###
 20200825 case9  profile      VM option = -Dfile.encoding=UTF-8 -Dspring.profiles.active=dev
+###
+20200825 case10   条件化装配bean    Condition接口 @Conditional注解
