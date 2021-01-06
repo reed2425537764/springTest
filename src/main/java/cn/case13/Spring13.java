@@ -14,7 +14,13 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 public class Spring13 {
     public static void main(String[] args) {
         ConfigurableApplicationContext applicationContext = new AnnotationConfigApplicationContext("cn.case13");
-        applicationContext.getBean(Bean13.class).fun();
+        Bean13 bean13 = applicationContext.getBean(Bean13.class);
+        //bean13.fun();
+        System.out.println(bean13.test);  //由于代理 此处打印null
+        System.out.println(bean13.getTest());
+
+        System.out.println(bean13.getTest());
+        System.out.println(bean13.test);
         applicationContext.close();
     }
 }
