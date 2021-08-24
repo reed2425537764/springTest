@@ -1,5 +1,6 @@
 package cn.case13;
 
+import cn.case13.case13_1.IBean13_1;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Configuration;
@@ -16,11 +17,14 @@ public class Spring13 {
         ConfigurableApplicationContext applicationContext = new AnnotationConfigApplicationContext("cn.case13");
         Bean13 bean13 = applicationContext.getBean(Bean13.class);
         //bean13.fun();
-        System.out.println(bean13.test);  //由于代理 此处打印null
-        System.out.println(bean13.getTest());
+//        System.out.println(bean13.test);  //由于代理 此处打印null
+//        System.out.println(bean13.getTest());
+//
+//        System.out.println(bean13.getTest());
+//        System.out.println(bean13.test);
 
-        System.out.println(bean13.getTest());
-        System.out.println(bean13.test);
+        IBean13_1 bean13_1 = applicationContext.getBean(IBean13_1.class);
+        bean13_1.method1();
         applicationContext.close();
     }
 }
